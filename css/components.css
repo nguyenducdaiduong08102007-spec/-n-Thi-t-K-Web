@@ -1,0 +1,56 @@
+/* LOGO BOX */
+.logo-box {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgba(6, 182, 212, 0.1);
+    border: 1px solid rgba(6, 182, 212, 0.4);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* TABS */
+.tab-floor.active-tab {
+    background-color: #06b6d4 !important;
+    color: #000000 !important;
+    font-weight: 700 !important;
+}
+
+/* MODAL & FORMS */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.modal-content {
+    background-color: #121815;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    max-width: 28rem;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    position: relative;
+}
+
+.form-input {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.625rem 1rem;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-size: 0.875rem;
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: #06b6d4;
+}
