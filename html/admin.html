@@ -158,7 +158,7 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 18px;
             margin-bottom: 28px;
         }
@@ -272,7 +272,10 @@
         table {
             width: 100%;
             border-collapse: collapse;
+            min-width: 640px;
         }
+
+        .panel { overflow-x: auto; }
 
         th, td {
             text-align: left;
@@ -432,22 +435,20 @@
             <form id="admin-login-form">
                 <div class="form-group">
                     <label for="admin-email">Email</label>
-                    <input id="admin-email" type="email" value="admin@theocean.com" required />
+                    <input id="admin-email" type="email" autocomplete="username" required />
                 </div>
 
                 <div class="form-group">
                     <label for="admin-password">Mật khẩu</label>
-                    <input id="admin-password" type="password" value="admin123" required />
+                    <input id="admin-password" type="password" autocomplete="current-password" required />
                 </div>
 
                 <button type="submit" class="primary-btn" style="width: 100%; padding: 14px 18px; font-size: 12px;">Đăng nhập</button>
-                <div id="login-error" class="login-error">Sai email hoặc mật khẩu.</div>
+                <div id="login-error" class="login-error" role="alert"></div>
             </form>
 
             <div class="demo-box">
-                Demo account:<br />
-                Email: admin@theocean.com<br />
-                Mật khẩu: admin123
+                Thông tin đăng nhập được cấu hình qua biến môi trường khi khởi động máy chủ. Không sử dụng mật khẩu mẫu.
             </div>
         </div>
     </div>
@@ -457,7 +458,7 @@
             <div class="topbar-inner">
                 <div class="brand"><strong>The</strong> Ocean Gym</div>
                 <div class="top-actions">
-                    <div class="status-pill"><span class="status-dot"></span> Admin Online</div>
+                    <div class="status-pill"><span class="status-dot"></span> Dữ liệu máy chủ</div>
                     <button id="add-revenue-btn" class="secondary-btn" type="button">+ Ghi doanh thu</button>
                     <button id="logout-btn" class="logout-btn" type="button">Đăng xuất</button>
                 </div>
@@ -475,31 +476,26 @@
 
             <section class="stats-grid">
                 <article class="stat-card">
-                    <span class="stat-label">Doanh thu tháng</span>
+                    <span class="stat-label">Doanh thu tháng này</span>
                     <div id="monthlyRevenue" class="stat-value">0đ</div>
-                    <span class="stat-meta">So với tháng trước +12.4%</span>
+                    <span id="currentMonthLabel" class="stat-meta"></span>
                 </article>
                 <article class="stat-card">
-                    <span class="stat-label">Hội viên active</span>
-                    <div id="activeMembers" class="stat-value">0</div>
-                    <span class="stat-meta">Tăng 8 người trong tuần</span>
+                    <span class="stat-label">Đăng ký tư vấn</span>
+                    <div id="registrationCount" class="stat-value">0</div>
+                    <span class="stat-meta">Tổng số yêu cầu đã nhận</span>
                 </article>
                 <article class="stat-card">
-                    <span class="stat-label">Tỷ lệ giữ chân</span>
-                    <div id="retention" class="stat-value">0%</div>
-                    <span class="stat-meta">Khách hàng trung thành cao</span>
-                </article>
-                <article class="stat-card">
-                    <span class="stat-label">Booking hôm nay</span>
-                    <div id="todayBookings" class="stat-value">0</div>
-                    <span class="stat-meta">Đã xác nhận 12 buổi</span>
+                    <span class="stat-label">Đăng ký hôm nay</span>
+                    <div id="todayRegistrations" class="stat-value">0</div>
+                    <span class="stat-meta">Yêu cầu nhận trong ngày</span>
                 </article>
             </section>
 
             <section class="panel">
                 <div class="panel-header">
                     <h2>Doanh thu theo tháng</h2>
-                    <span class="tag">2026</span>
+                    <span id="chart-period" class="tag"></span>
                 </div>
                 <div id="revenueChart" class="revenue-chart"></div>
             </section>
@@ -507,31 +503,47 @@
             <section class="two-col">
                 <div class="panel">
                     <div class="panel-header">
-                        <h2>Hội viên mới</h2>
-                        <span class="tag">Top 5</span>
+                        <h2>Yêu cầu tư vấn mới</h2>
+                        <span class="tag">Mới nhất</span>
                     </div>
                     <table>
                         <thead>
                             <tr>
                                 <th>Họ tên</th>
-                                <th>Gói</th>
-                                <th>Ngày</th>
-                                <th>Giá trị</th>
+                                <th>Mục tiêu</th>
+                                <th>Điện thoại</th>
+                                <th>Thời gian</th>
                             </tr>
                         </thead>
-                        <tbody id="membersTable"></tbody>
+                        <tbody id="registrationsTable"></tbody>
                     </table>
                 </div>
 
                 <div class="panel">
                     <div class="panel-header">
-                        <h2>Gói phổ biến</h2>
-                        <span class="tag">Phân tích</span>
+                        <h2>Mục tiêu đăng ký</h2>
+                        <span class="tag">Tổng hợp</span>
                     </div>
                     <div id="packageList" class="package-list"></div>
                 </div>
             </section>
         </main>
+    </div>
+
+    <div id="revenue-modal" class="hidden" role="dialog" aria-modal="true" aria-labelledby="revenue-title" style="position: fixed; inset: 0; z-index: 20; background: rgba(0,0,0,.8); display: grid; place-items: center; padding: 20px;">
+        <form id="revenue-form" class="login-card" style="width: min(100%, 440px);">
+            <h2 id="revenue-title">Ghi nhận doanh thu</h2>
+            <p class="login-subtitle">Khoản thu sẽ được cộng vào tháng hiện tại.</p>
+            <div class="form-group">
+                <label for="revenue-amount">Số tiền (VNĐ)</label>
+                <input id="revenue-amount" name="amount" type="number" min="1" max="1000000000" step="1000" required inputmode="numeric" />
+            </div>
+            <div id="revenue-error" class="login-error" role="alert"></div>
+            <div style="display: flex; justify-content: end; gap: 10px; margin-top: 16px;">
+                <button id="cancel-revenue-btn" class="logout-btn" type="button">Hủy</button>
+                <button class="primary-btn" type="submit">Lưu doanh thu</button>
+            </div>
+        </form>
     </div>
 
     <script src="../js/admin.js"></script>

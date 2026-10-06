@@ -3,48 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE OCEAN GYM - Private Gym Tại Thủ Đức</title>
+    <title data-i18n="page_title">THE OCEAN GYM - Private Gym Tại Thủ Đức</title>
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/tailwind.css">
     
     <!-- Google Fonts: Inter & Be Vietnam Pro -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Be Vietnam Pro"', '"Inter"', 'sans-serif'],
-                        display: ['"Inter"', '"Be Vietnam Pro"', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            red: '#E50914',
-                            dark: '#0A0A0A',
-                            card: '#141414',
-                            light: '#F8F9FA',
-                            accent: '#222222',
-                            gray: '#8E8E93',
-                            border: '#2A2A2A',
-                            lightBorder: '#E5E7EB'
-                        }
-                    },
-                    letterSpacing: {
-                        tightest: '-.075em',
-                        superwide: '0.2em',
-                        mega: '0.25em'
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="../js/vendor/lucide.min.js"></script>
 
     <style>
         body {
@@ -113,7 +81,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
             <!-- Logo -->
-            <a href="#" class="flex items-center gap-2 group">
+            <a href="#top" class="flex items-center gap-2 group" id="top">
                 <span class="text-2xl font-extrabold tracking-tighter text-white uppercase font-display">
                     THE <span class="text-brand-red">OCEAN</span>
                 </span>
@@ -133,7 +101,7 @@
             <div class="flex items-center space-x-4">
                 
                 <!-- Search Icon -->
-                <button onclick="toggleSearchModal()" class="p-2 text-gray-300 hover:text-white hover:bg-white/10 rounded-full transition" title="Tìm kiếm">
+                <button onclick="toggleSearchModal()" class="p-2 text-gray-300 hover:text-white hover:bg-white/10 rounded-full transition" title="Tìm kiếm" data-i18n-aria="search_label" data-i18n-title="search_label">
                     <i data-lucide="search" class="w-5 h-5"></i>
                 </button>
 
@@ -155,7 +123,7 @@
                 </button>
 
                 <!-- Mobile menu toggle button -->
-                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-gray-300 hover:text-white focus:outline-none">
+                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-gray-300 hover:text-white focus:outline-none" aria-label="Open menu" data-i18n-aria="menu_label">
                     <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
                 </button>
             </div>
@@ -184,7 +152,6 @@
         <div class="absolute inset-0 z-0">
             <video autoplay loop muted playsinline class="w-full h-full object-cover opacity-60 scale-105" style="filter: brightness(1.18) saturate(1.12);">
                 <source src="../assets/video/hero.mp4" type="video/mp4">
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-man-runs-on-the-treadmill-in-a-gym-41315-large.mp4" type="video/mp4">
             </video>
             <div class="absolute inset-0 video-overlay"></div>
         </div>
@@ -217,7 +184,7 @@
                     </button>
 
                     <button onclick="openQuizModal()" class="inline-flex items-center justify-center text-white font-semibold text-xs sm:text-sm tracking-wider px-4 py-3 rounded border border-white/20 bg-white/5 hover:bg-white/10 transition">
-                        <span>Tìm cách tập phù hợp</span>
+                        <span data-i18n="btn_quiz">Tìm cách tập phù hợp</span>
                     </button>
                 </div>
 
@@ -232,11 +199,8 @@
                 </a>
 
                 <div class="flex flex-wrap items-center gap-6 sm:gap-8">
-                    <a href="https://www.google.com/maps/place/Ph%C3%A2n+hi%E1%BB%87u+Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+GTVT+t%E1%BA%A1i+Tp.+H%E1%BB%93+Ch%C3%AD+Minh/@10.8457013,106.7915971,17z/data=!3m1!4b1!4m6!3m5!1s0x317527158a0a5b81:0xf45c5d34ac580517!8m2!3d10.845696!4d106.794172!16s%2Fg%2F1219msrk?authuser=0&entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" class="hover:text-white transition flex items-center gap-1">
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=The+Ocean+Gym%2C+Thu+Duc%2C+Ho+Chi+Minh+City" target="_blank" rel="noopener noreferrer" class="hover:text-white transition flex items-center gap-1">
                         Google Maps <span class="text-xs">↗</span>
-                    </a>
-                    <a href="#" target="_blank" rel="noopener" class="hover:text-white transition flex items-center gap-1">
-                        Facebook <span class="text-xs">↗</span>
                     </a>
                 </div>
 
@@ -324,16 +288,16 @@
 
             <!-- Floor Tabs -->
             <div class="flex border-b border-gray-300 overflow-x-auto no-scrollbar mb-8 gap-8">
-                <button onclick="setActiveFloor(1)" id="floor-tab-1" class="floor-tab py-4 text-sm font-bold uppercase tracking-wider border-b-2 border-black text-black whitespace-nowrap">
+                <button onclick="setActiveFloor(1)" id="floor-tab-1" aria-selected="true" role="tab" class="floor-tab py-4 text-sm font-bold uppercase tracking-wider border-b-2 border-black text-black whitespace-nowrap" data-i18n="floor1_tab">
                     TẦNG 1: HEAVY STRENGTH
                 </button>
-                <button onclick="setActiveFloor(2)" id="floor-tab-2" class="floor-tab py-4 text-sm font-semibold uppercase tracking-wider border-b-2 border-transparent text-gray-500 hover:text-black whitespace-nowrap">
+                <button onclick="setActiveFloor(2)" id="floor-tab-2" aria-selected="false" role="tab" class="floor-tab py-4 text-sm font-semibold uppercase tracking-wider border-b-2 border-transparent text-gray-500 hover:text-black whitespace-nowrap" data-i18n="floor2_tab">
                     TẦNG 2: CARDIO & HIIT
                 </button>
-                <button onclick="setActiveFloor(3)" id="floor-tab-3" class="floor-tab py-4 text-sm font-semibold uppercase tracking-wider border-b-2 border-transparent text-gray-500 hover:text-black whitespace-nowrap">
+                <button onclick="setActiveFloor(3)" id="floor-tab-3" aria-selected="false" role="tab" class="floor-tab py-4 text-sm font-semibold uppercase tracking-wider border-b-2 border-transparent text-gray-500 hover:text-black whitespace-nowrap" data-i18n="floor3_tab">
                     TẦNG 3: PRIVATE PT STUDIO
                 </button>
-                <button onclick="setActiveFloor(4)" id="floor-tab-4" class="floor-tab py-4 text-sm font-semibold uppercase tracking-wider border-b-2 border-transparent text-gray-500 hover:text-black whitespace-nowrap">
+                <button onclick="setActiveFloor(4)" id="floor-tab-4" aria-selected="false" role="tab" class="floor-tab py-4 text-sm font-semibold uppercase tracking-wider border-b-2 border-transparent text-gray-500 hover:text-black whitespace-nowrap" data-i18n="floor4_tab">
                     TẦNG 4: RECOVERY & SAUNA
                 </button>
             </div>
@@ -343,7 +307,7 @@
                 
                 <!-- Floor Image -->
                 <div class="lg:col-span-7 aspect-video rounded-lg overflow-hidden relative group">
-                    <img id="floor-img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop" alt="The Ocean Gym Floor" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <img id="floor-img" src="../assets/images/gym-floor-strength.jpg" alt="The Ocean Gym Floor" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute top-4 left-4 bg-black text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-wider" id="floor-badge">
                         TẦNG 1
                     </div>
@@ -399,96 +363,96 @@
                 <!-- Program 1 -->
                 <div class="glass-card p-6 rounded-lg hover:border-white/40 transition duration-300 flex flex-col justify-between group">
                     <div>
-                        <div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">LỘ TRÌNH 01</div>
+                        <div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3" data-i18n="program_label_1">LỘ TRÌNH 01</div>
                         <h3 class="text-xl font-extrabold uppercase font-display text-white mb-2 group-hover:text-brand-red transition" data-i18n="p1_name">GIẢM MỠ SĂN CHẮC</h3>
                         <p class="text-xs text-gray-400 leading-relaxed mb-4" data-i18n="p1_desc">Tối ưu hoá calo tiêu hao, đốt mỡ nội tạng mà không làm mất khối lượng cơ tự nhiên.</p>
                     </div>
                     <button onclick="openModal('register')" class="text-xs font-bold uppercase tracking-wider text-white hover:text-gray-300 flex items-center gap-1 pt-4 border-t border-white/10">
-                        <span>Đăng ký tư vấn</span> ↗
+                        <span data-i18n="register_consult">Đăng ký tư vấn</span> ↗
                     </button>
                 </div>
 
                 <!-- Program 2 -->
                 <div class="glass-card p-6 rounded-lg hover:border-white/40 transition duration-300 flex flex-col justify-between group">
                     <div>
-                        <div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">LỘ TRÌNH 02</div>
+                        <div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3" data-i18n="program_label_2">LỘ TRÌNH 02</div>
                         <h3 class="text-xl font-extrabold uppercase font-display text-white mb-2 group-hover:text-brand-red transition" data-i18n="p2_name">TĂNG CƠ CHUẨN PHOM</h3>
                         <p class="text-xs text-gray-400 leading-relaxed mb-4" data-i18n="p2_desc">Xây dựng mật độ cơ bắp dày dặn, siết nét chuẩn tỷ lệ vàng cơ thể.</p>
                     </div>
                     <button onclick="openModal('register')" class="text-xs font-bold uppercase tracking-wider text-white hover:text-gray-300 flex items-center gap-1 pt-4 border-t border-white/10">
-                        <span>Đăng ký tư vấn</span> ↗
+                        <span data-i18n="register_consult">Đăng ký tư vấn</span> ↗
                     </button>
                 </div>
 
                 <!-- Program 3 -->
                 <div class="glass-card p-6 rounded-lg hover:border-white/40 transition duration-300 flex flex-col justify-between group">
                     <div>
-                        <div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">LỘ TRÌNH 03</div>
+                        <div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3" data-i18n="program_label_3">LỘ TRÌNH 03</div>
                         <h3 class="text-xl font-extrabold uppercase font-display text-white mb-2 group-hover:text-brand-red transition" data-i18n="p3_name">SỬA TƯ THẾ & CỘT SỐNG</h3>
                         <p class="text-xs text-gray-400 leading-relaxed mb-4" data-i18n="p3_desc">Khắc phục gù lưng, đau cổ vai gáy dân văn phòng, cân bằng xương chậu.</p>
                     </div>
                     <button onclick="openModal('register')" class="text-xs font-bold uppercase tracking-wider text-white hover:text-gray-300 flex items-center gap-1 pt-4 border-t border-white/10">
-                        <span>Đăng ký tư vấn</span> ↗
+                        <span data-i18n="register_consult">Đăng ký tư vấn</span> ↗
                     </button>
                 </div>
 
                 <!-- Program 4 -->
                 <div class="glass-card p-6 rounded-lg hover:border-white/40 transition duration-300 flex flex-col justify-between group">
                     <div>
-                        <div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">LỘ TRÌNH 04</div>
+                        <div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3" data-i18n="program_label_4">LỘ TRÌNH 04</div>
                         <h3 class="text-xl font-extrabold uppercase font-display text-white mb-2 group-hover:text-brand-red transition" data-i18n="p4_name">TẬP DOANH NHÂN</h3>
                         <p class="text-xs text-gray-400 leading-relaxed mb-4" data-i18n="p4_desc">Lịch tập linh hoạt theo giờ bận rộn, phục hồi năng lượng làm việc đỉnh cao.</p>
                     </div>
                     <button onclick="openModal('register')" class="text-xs font-bold uppercase tracking-wider text-white hover:text-gray-300 flex items-center gap-1 pt-4 border-t border-white/10">
-                        <span>Đăng ký tư vấn</span> ↗
+                        <span data-i18n="register_consult">Đăng ký tư vấn</span> ↗
                     </button>
                 </div>
 
                 <!-- Program 5 -->
                 <div class="glass-card p-6 rounded-lg hover:border-white/40 transition duration-300 flex flex-col justify-between group">
                     <div>
-                        <div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">LỘ TRÌNH 05</div>
+                        <div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3" data-i18n="program_label_5">LỘ TRÌNH 05</div>
                         <h3 class="text-xl font-extrabold uppercase font-display text-white mb-2 group-hover:text-brand-red transition" data-i18n="p5_name">PHỤC HỒI CHẤN THƯƠNG</h3>
                         <p class="text-xs text-gray-400 leading-relaxed mb-4" data-i18n="p5_desc">Giải phóng điểm cơ căng xoắn, lấy lại độ linh hoạt khớp sau chấn thương.</p>
                     </div>
                     <button onclick="openModal('register')" class="text-xs font-bold uppercase tracking-wider text-white hover:text-gray-300 flex items-center gap-1 pt-4 border-t border-white/10">
-                        <span>Đăng ký tư vấn</span> ↗
+                        <span data-i18n="register_consult">Đăng ký tư vấn</span> ↗
                     </button>
                 </div>
 
                 <!-- Program 6 -->
                 <div class="glass-card p-6 rounded-lg hover:border-white/40 transition duration-300 flex flex-col justify-between group">
                     <div>
-                        <div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">LỘ TRÌNH 06</div>
+                        <div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3" data-i18n="program_label_6">LỘ TRÌNH 06</div>
                         <h3 class="text-xl font-extrabold uppercase font-display text-white mb-2 group-hover:text-brand-red transition" data-i18n="p6_name">SIẾT DÁNG SỰ KIỆN</h3>
                         <p class="text-xs text-gray-400 leading-relaxed mb-4" data-i18n="p6_desc">Chương trình cấp tốc 6-8 tuần giúp bạn tỏa sáng trong các sự kiện quan trọng.</p>
                     </div>
                     <button onclick="openModal('register')" class="text-xs font-bold uppercase tracking-wider text-white hover:text-gray-300 flex items-center gap-1 pt-4 border-t border-white/10">
-                        <span>Đăng ký tư vấn</span> ↗
+                        <span data-i18n="register_consult">Đăng ký tư vấn</span> ↗
                     </button>
                 </div>
 
                 <!-- Program 7 -->
                 <div class="glass-card p-6 rounded-lg hover:border-white/40 transition duration-300 flex flex-col justify-between group">
                     <div>
-                        <div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">LỘ TRÌNH 07</div>
+                        <div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3" data-i18n="program_label_7">LỘ TRÌNH 07</div>
                         <h3 class="text-xl font-extrabold uppercase font-display text-white mb-2 group-hover:text-brand-red transition" data-i18n="p7_name">KIẾN TẠO VÒNG 3 NỮ</h3>
                         <p class="text-xs text-gray-400 leading-relaxed mb-4" data-i18n="p7_desc">Tập trung làm đầy đặn, săn chắc vòng 3 mà không làm thô đùi.</p>
                     </div>
                     <button onclick="openModal('register')" class="text-xs font-bold uppercase tracking-wider text-white hover:text-gray-300 flex items-center gap-1 pt-4 border-t border-white/10">
-                        <span>Đăng ký tư vấn</span> ↗
+                        <span data-i18n="register_consult">Đăng ký tư vấn</span> ↗
                     </button>
                 </div>
 
                 <!-- Program 8 -->
                 <div class="glass-card p-6 rounded-lg hover:border-white/40 transition duration-300 flex flex-col justify-between group">
                     <div>
-                        <div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">LỘ TRÌNH 08</div>
+                        <div class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3" data-i18n="program_label_8">LỘ TRÌNH 08</div>
                         <h3 class="text-xl font-extrabold uppercase font-display text-white mb-2 group-hover:text-brand-red transition" data-i18n="p8_name">HYBRID ATHLETE</h3>
                         <p class="text-xs text-gray-400 leading-relaxed mb-4" data-i18n="p8_desc">Kết hợp sức mạnh kháng lực và VO2 Max cho vận động viên phong trào.</p>
                     </div>
                     <button onclick="openModal('register')" class="text-xs font-bold uppercase tracking-wider text-white hover:text-gray-300 flex items-center gap-1 pt-4 border-t border-white/10">
-                        <span>Đăng ký tư vấn</span> ↗
+                        <span data-i18n="register_consult">Đăng ký tư vấn</span> ↗
                     </button>
                 </div>
 
@@ -501,23 +465,23 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
                 <div>
-                    <span class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2 block">ĐỘI NGŨ COACH</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight font-display">HUẤN LUYỆN VIÊN GIÀU KINH NGHIỆM</h2>
+                    <span class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2 block" data-i18n="coaches_eyebrow">ĐỘI NGŨ COACH</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight font-display" data-i18n="coaches_title">HUẤN LUYỆN VIÊN GIÀU KINH NGHIỆM</h2>
                 </div>
-                <p class="text-sm text-gray-600 max-w-md mt-4 md:mt-0">Mỗi chương trình đều do coach có tư duy cá nhân hóa, theo dõi định kỳ và chỉnh form sát từng buổi tập.</p>
+                <p class="text-sm text-gray-600 max-w-md mt-4 md:mt-0" data-i18n="coaches_desc">Mỗi chương trình đều do coach có tư duy cá nhân hóa, theo dõi định kỳ và chỉnh form sát từng buổi tập.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm group">
                     <div class="h-72 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80" alt="Coach 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="../assets/images/coach-hai.jpg" alt="Huấn luyện viên Hải" data-i18n-alt="coach_hai_alt" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="p-6">
-                        <div class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">HEAD COACH</div>
-                        <h3 class="text-xl font-black uppercase font-display mb-1">ANH HẢI</h3>
-                        <p class="text-sm text-gray-600 mb-3">Chuyên giảm mỡ & cải thiện thể trạng</p>
+                        <div class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2" data-i18n="coach_hai_role">HEAD COACH</div>
+                        <h3 class="text-xl font-black uppercase font-display mb-1" data-i18n="coach_hai_name">ANH HẢI</h3>
+                        <p class="text-sm text-gray-600 mb-3" data-i18n="coach_hai_desc">Chuyên giảm mỡ & cải thiện thể trạng</p>
                         <div class="flex items-center gap-2 text-xs text-gray-500">
-                            <span>8 năm kinh nghiệm</span>
+                            <span data-i18n="coach_hai_exp">8 năm kinh nghiệm</span>
                             <span>•</span>
                             <span>CF-L1</span>
                         </div>
@@ -526,14 +490,14 @@
 
                 <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm group">
                     <div class="h-72 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=900&q=80" alt="Coach 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="../assets/images/coach-thao.jpg" alt="Huấn luyện viên Thảo" data-i18n-alt="coach_thao_alt" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="p-6">
-                        <div class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">STRENGTH COACH</div>
-                        <h3 class="text-xl font-black uppercase font-display mb-1">CHỊ THẢO</h3>
-                        <p class="text-sm text-gray-600 mb-3">Tăng cơ, cải thiện tỷ lệ và sức mạnh</p>
+                        <div class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2" data-i18n="coach_thao_role">STRENGTH COACH</div>
+                        <h3 class="text-xl font-black uppercase font-display mb-1" data-i18n="coach_thao_name">CHỊ THẢO</h3>
+                        <p class="text-sm text-gray-600 mb-3" data-i18n="coach_thao_desc">Tăng cơ, cải thiện tỷ lệ và sức mạnh</p>
                         <div class="flex items-center gap-2 text-xs text-gray-500">
-                            <span>6 năm kinh nghiệm</span>
+                            <span data-i18n="coach_thao_exp">6 năm kinh nghiệm</span>
                             <span>•</span>
                             <span>Powerlifting</span>
                         </div>
@@ -542,14 +506,14 @@
 
                 <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm group">
                     <div class="h-72 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=900&q=80" alt="Coach 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="../assets/images/coach-huy.jpg" alt="Huấn luyện viên Huy" data-i18n-alt="coach_huy_alt" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="p-6">
-                        <div class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">REHAB COACH</div>
-                        <h3 class="text-xl font-black uppercase font-display mb-1">ANH HUY</h3>
-                        <p class="text-sm text-gray-600 mb-3">Phục hồi chấn thương & sửa tư thế</p>
+                        <div class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2" data-i18n="coach_huy_role">REHAB COACH</div>
+                        <h3 class="text-xl font-black uppercase font-display mb-1" data-i18n="coach_huy_name">ANH HUY</h3>
+                        <p class="text-sm text-gray-600 mb-3" data-i18n="coach_huy_desc">Phục hồi chấn thương & sửa tư thế</p>
                         <div class="flex items-center gap-2 text-xs text-gray-500">
-                            <span>9 năm kinh nghiệm</span>
+                            <span data-i18n="coach_huy_exp">9 năm kinh nghiệm</span>
                             <span>•</span>
                             <span>Corrective exercise</span>
                         </div>
@@ -565,39 +529,39 @@
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
                 <div>
                     <span class="text-xs font-bold uppercase tracking-widest text-brand-red mb-2 block">COMMUNITY</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight font-display">HỘI VIÊN NÓI GÌ VỀ THE OCEAN</h2>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight font-display" data-i18n="community_title">HỘI VIÊN NÓI GÌ VỀ THE OCEAN</h2>
                 </div>
                 <div class="flex items-center gap-2 mt-4 md:mt-0 text-yellow-400">
                     <span>★★★★★</span>
-                    <span class="text-sm text-gray-300">4.9/5 từ 1,200+ thành viên</span>
+                    <span class="text-sm text-gray-300" data-i18n="reviews_rating">4.9/5 từ 1,200+ thành viên</span>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="glass-card p-6 rounded-lg space-y-4">
                     <div class="flex items-center gap-2 text-yellow-400">★★★★★</div>
-                    <p class="text-sm text-gray-300 leading-relaxed">“Tôi tập ở đây 6 tháng rồi thấy form cơ bắp rõ, ít khi phải đợi máy và không bị cảm giác chen chúc như phòng tập thường.”</p>
+                    <p class="text-sm text-gray-300 leading-relaxed" data-i18n="review_one">“Tôi tập ở đây 6 tháng rồi thấy form cơ bắp rõ, ít khi phải đợi máy và không bị cảm giác chen chúc như phòng tập thường.”</p>
                     <div class="pt-4 border-t border-white/10">
                         <div class="font-bold uppercase text-white">KHÁNH</div>
-                        <div class="text-xs text-gray-400">Tăng cơ / giảm mỡ</div>
+                        <div class="text-xs text-gray-400" data-i18n="review_one_goal">Tăng cơ / giảm mỡ</div>
                     </div>
                 </div>
 
                 <div class="glass-card p-6 rounded-lg space-y-4">
                     <div class="flex items-center gap-2 text-yellow-400">★★★★★</div>
-                    <p class="text-sm text-gray-300 leading-relaxed">“Coach rất kỹ, hướng dẫn từng động tác và lịch tập rõ ràng. Ngoài ra không gian yên tĩnh, private và sạch sẽ hơn nhiều so với gym khác.”</p>
+                    <p class="text-sm text-gray-300 leading-relaxed" data-i18n="review_two">“Coach rất kỹ, hướng dẫn từng động tác và lịch tập rõ ràng. Ngoài ra không gian yên tĩnh, private và sạch sẽ hơn nhiều so với gym khác.”</p>
                     <div class="pt-4 border-t border-white/10">
                         <div class="font-bold uppercase text-white">LINH</div>
-                        <div class="text-xs text-gray-400">Cải thiện sức khỏe</div>
+                        <div class="text-xs text-gray-400" data-i18n="review_two_goal">Cải thiện sức khỏe</div>
                     </div>
                 </div>
 
                 <div class="glass-card p-6 rounded-lg space-y-4">
                     <div class="flex items-center gap-2 text-yellow-400">★★★★★</div>
-                    <p class="text-sm text-gray-300 leading-relaxed">“Mình thích tầng recovery và sauna. Tập xong cảm thấy hồi phục nhanh, không bị đau nhức như nhiều nơi khác.”</p>
+                    <p class="text-sm text-gray-300 leading-relaxed" data-i18n="review_three">“Mình thích tầng recovery và sauna. Tập xong cảm thấy hồi phục nhanh, không bị đau nhức như nhiều nơi khác.”</p>
                     <div class="pt-4 border-t border-white/10">
                         <div class="font-bold uppercase text-white">THÁI</div>
-                        <div class="text-xs text-gray-400">Phục hồi & sức bền</div>
+                        <div class="text-xs text-gray-400" data-i18n="review_three_goal">Phục hồi & sức bền</div>
                     </div>
                 </div>
             </div>
@@ -608,50 +572,50 @@
     <section id="bang-gia" class="py-24 bg-brand-light text-black">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-                <span class="text-xs font-bold uppercase tracking-widest text-gray-500">BẢNG GIÁ</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight font-display">GÓI TẬP PHÙ HỢP MỤC TIÊU</h2>
-                <p class="text-sm text-gray-600">Không chi phí ẩn, bao gồm toàn bộ tiện ích locker, sauna, khăn tập và nước uống vô tận.</p>
+                <span class="text-xs font-bold uppercase tracking-widest text-gray-500" data-i18n="pricing_label">BẢNG GIÁ</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight font-display" data-i18n="pricing_title">GÓI TẬP PHÙ HỢP MỤC TIÊU</h2>
+                <p class="text-sm text-gray-600" data-i18n="pricing_desc">Không chi phí ẩn, bao gồm toàn bộ tiện ích locker, sauna, khăn tập và nước uống vô tận.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white rounded-xl p-8 border border-gray-200 flex flex-col justify-between shadow-sm">
                     <div>
-                        <div class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3">Gói cơ bản</div>
+                        <div class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3" data-i18n="price_basic">Gói cơ bản</div>
                         <h3 class="text-3xl font-black uppercase font-display mb-4">2.3M</h3>
                         <ul class="text-sm text-gray-600 space-y-3">
-                            <li>• 3 buổi/tuần</li>
-                            <li>• 1 Coach & 1 buổi review</li>
-                            <li>• Sử dụng không gian chung</li>
+                            <li data-i18n="price_basic_feature1">• 3 buổi/tuần</li>
+                            <li data-i18n="price_basic_feature2">• 1 Coach & 1 buổi review</li>
+                            <li data-i18n="price_basic_feature3">• Sử dụng không gian chung</li>
                         </ul>
                     </div>
-                    <button onclick="openModal('register')" class="mt-8 w-full py-3 border border-black text-black font-bold text-xs uppercase tracking-wider rounded hover:bg-black hover:text-white transition">Đăng ký</button>
+                    <button onclick="openModal('register')" class="mt-8 w-full py-3 border border-black text-black font-bold text-xs uppercase tracking-wider rounded hover:bg-black hover:text-white transition" data-i18n="register">Đăng ký</button>
                 </div>
 
                 <div class="bg-black text-white rounded-xl p-8 border border-black flex flex-col justify-between relative shadow-xl transform md:-translate-y-2">
-                    <div class="absolute top-4 right-4 bg-brand-red text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Popular</div>
+                    <div class="absolute top-4 right-4 bg-brand-red text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded" data-i18n="popular">Phổ biến</div>
                     <div>
-                        <div class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Gói chuyển đổi</div>
+                        <div class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3" data-i18n="price_transform">Gói chuyển đổi</div>
                         <h3 class="text-3xl font-black uppercase font-display mb-4">4.8M</h3>
                         <ul class="text-sm text-gray-300 space-y-3">
-                            <li>• 5 buổi/tuần</li>
-                            <li>• 1 kèm 1 kiểm soát form</li>
-                            <li>• Ưu tiên slot & recovery lounge</li>
+                            <li data-i18n="price_transform_feature1">• 5 buổi/tuần</li>
+                            <li data-i18n="price_transform_feature2">• 1 kèm 1 kiểm soát form</li>
+                            <li data-i18n="price_transform_feature3">• Ưu tiên slot & recovery lounge</li>
                         </ul>
                     </div>
-                    <button onclick="openModal('register')" class="mt-8 w-full py-3 bg-white text-black font-bold text-xs uppercase tracking-wider rounded hover:bg-gray-200 transition">Đăng ký</button>
+                    <button onclick="openModal('register')" class="mt-8 w-full py-3 bg-white text-black font-bold text-xs uppercase tracking-wider rounded hover:bg-gray-200 transition" data-i18n="register">Đăng ký</button>
                 </div>
 
                 <div class="bg-white rounded-xl p-8 border border-gray-200 flex flex-col justify-between shadow-sm">
                     <div>
-                        <div class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3">Gói VIP</div>
+                        <div class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3" data-i18n="price_vip">Gói VIP</div>
                         <h3 class="text-3xl font-black uppercase font-display mb-4">8.9M</h3>
                         <ul class="text-sm text-gray-600 space-y-3">
-                            <li>• Tập 1 kèm 1 premium</li>
-                            <li>• Theo dõi InBody định kỳ</li>
-                            <li>• Sauna + locker + recovery tối ưu</li>
+                            <li data-i18n="price_vip_feature1">• Tập 1 kèm 1 premium</li>
+                            <li data-i18n="price_vip_feature2">• Theo dõi InBody định kỳ</li>
+                            <li data-i18n="price_vip_feature3">• Sauna + locker + recovery tối ưu</li>
                         </ul>
                     </div>
-                    <button onclick="openModal('register')" class="mt-8 w-full py-3 border border-black text-black font-bold text-xs uppercase tracking-wider rounded hover:bg-black hover:text-white transition">Đăng ký</button>
+                    <button onclick="openModal('register')" class="mt-8 w-full py-3 border border-black text-black font-bold text-xs uppercase tracking-wider rounded hover:bg-black hover:text-white transition" data-i18n="register">Đăng ký</button>
                 </div>
             </div>
         </div>
@@ -665,34 +629,30 @@
                     <div class="flex items-center gap-2 group">
                         <span class="text-2xl font-extrabold tracking-tighter uppercase font-display text-white">THE <span class="text-brand-red">OCEAN</span></span>
                     </div>
-                    <p class="text-sm text-gray-400 max-w-md">Private gym tại Thủ Đức với mô hình tập luyện 1 kèm 1, không gian riêng tư và lộ trình hướng tới mục tiêu rõ ràng.</p>
+                    <p class="text-sm text-gray-400 max-w-md" data-i18n="footer_desc">Private gym tại Thủ Đức với mô hình tập luyện 1 kèm 1, không gian riêng tư và lộ trình hướng tới mục tiêu rõ ràng.</p>
                     <div class="flex items-center gap-3 text-sm text-gray-400">
-                        <span><i data-lucide="map-pin" class="w-4 h-4 inline-block"></i> Thủ Đức, TP.HCM</span>
+                        <span><i data-lucide="map-pin" class="w-4 h-4 inline-block"></i> <span data-i18n="footer_location">Thủ Đức, TP.HCM</span></span>
                     </div>
                 </div>
 
                 <div class="lg:col-span-3 space-y-3">
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-gray-500">Điều hướng</h4>
-                    <a href="#chuong-trinh" class="block text-sm text-gray-300 hover:text-white">Chương trình</a>
-                    <a href="#khong-gian" class="block text-sm text-gray-300 hover:text-white">Không gian</a>
-                    <a href="#huan-luyen-vien" class="block text-sm text-gray-300 hover:text-white">Huấn luyện viên</a>
-                    <a href="#bang-gia" class="block text-sm text-gray-300 hover:text-white">Bảng giá</a>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-gray-500" data-i18n="footer_nav_heading">Điều hướng</h4>
+                    <a href="#chuong-trinh" class="block text-sm text-gray-300 hover:text-white" data-i18n="nav_programs">Chương trình</a>
+                    <a href="#khong-gian" class="block text-sm text-gray-300 hover:text-white" data-i18n="nav_space">Không gian</a>
+                    <a href="#huan-luyen-vien" class="block text-sm text-gray-300 hover:text-white" data-i18n="nav_coaches">Huấn luyện viên</a>
+                    <a href="#bang-gia" class="block text-sm text-gray-300 hover:text-white" data-i18n="nav_pricing">Bảng giá</a>
                 </div>
 
                 <div class="lg:col-span-4 space-y-3">
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-gray-500">Liên hệ</h4>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-gray-500" data-i18n="footer_contact_heading">Liên hệ</h4>
                     <a href="tel:0917451448" class="block text-sm text-gray-300 hover:text-white">0917.451.448</a>
-                    <a href="https://www.facebook.com" target="_blank" rel="noopener" class="block text-sm text-gray-300 hover:text-white">Facebook</a>
-                    <a href="https://www.tiktok.com" target="_blank" rel="noopener" class="block text-sm text-gray-300 hover:text-white">TikTok</a>
+                    <a href="tel:0917451448" class="block text-sm text-gray-300 hover:text-white" data-i18n="call_us">Gọi để được tư vấn</a>
                 </div>
             </div>
 
             <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-gray-500 font-medium">
-                <p>© 2026 THE OCEAN GYM THỦ ĐỨC. ALL RIGHTS RESERVED.</p>
-                <div class="flex gap-6">
-                    <a href="#" class="hover:text-white">Privacy</a>
-                    <a href="#" class="hover:text-white">Terms</a>
-                </div>
+                <p data-i18n="footer_copyright">© 2026 THE OCEAN GYM THỦ ĐỨC. ALL RIGHTS RESERVED.</p>
+                <span data-i18n="footer_location">Thủ Đức, TP.HCM</span>
             </div>
         </div>
     </footer>
@@ -700,41 +660,41 @@
     <!-- QUIZ MODAL -->
     <div id="quiz-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
         <div class="bg-zinc-900 border border-white/10 p-6 sm:p-8 rounded-xl max-w-xl w-full relative space-y-5">
-            <button onclick="closeQuizModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+            <button onclick="closeQuizModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white" aria-label="Close" data-i18n-aria="close_label">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
             <div class="text-center space-y-2">
-                <span class="text-[10px] font-bold uppercase tracking-widest text-brand-red">TRẮC NGHIỆM TẬP LUYỆN</span>
-                <h3 class="text-2xl font-black uppercase text-white font-display">TÌM LỘ TRÌNH TẬP PHÙ HỢP</h3>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-brand-red" data-i18n="quiz_eyebrow">TRẮC NGHIỆM TẬP LUYỆN</span>
+                <h3 class="text-2xl font-black uppercase text-white font-display" data-i18n="quiz_title">TÌM LỘ TRÌNH TẬP PHÙ HỢP</h3>
             </div>
 
             <div id="quiz-step-1" class="space-y-4">
-                <p class="text-xs font-semibold uppercase text-gray-300 text-center">Bước 1/3: Mục tiêu quan trọng nhất của bạn là gì?</p>
+                <p class="text-xs font-semibold uppercase text-gray-300 text-center" data-i18n="quiz_step_one">Bước 1/3: Mục tiêu quan trọng nhất của bạn là gì?</p>
                 <div class="grid gap-3">
-                    <button onclick="nextQuizStep(2, 'Giảm mỡ')" class="w-full text-left px-4 py-3 rounded border border-white/10 bg-white/5 text-white hover:border-brand-red hover:bg-brand-red/10 transition">Giảm mỡ</button>
-                    <button onclick="nextQuizStep(2, 'Tăng cơ')" class="w-full text-left px-4 py-3 rounded border border-white/10 bg-white/5 text-white hover:border-brand-red hover:bg-brand-red/10 transition">Tăng cơ</button>
-                    <button onclick="nextQuizStep(2, 'Sức khỏe tổng thể')" class="w-full text-left px-4 py-3 rounded border border-white/10 bg-white/5 text-white hover:border-brand-red hover:bg-brand-red/10 transition">Sức khỏe tổng thể</button>
-                    <button onclick="nextQuizStep(2, 'Chạy bộ / cardio')" class="w-full text-left px-4 py-3 rounded border border-white/10 bg-white/5 text-white hover:border-brand-red hover:bg-brand-red/10 transition">Chạy bộ / cardio</button>
+                    <button onclick="nextQuizStep(2, 'fat_loss')" data-i18n="quiz_goal_fat_loss" class="w-full text-left px-4 py-3 rounded border border-white/10 bg-white/5 text-white hover:border-brand-red hover:bg-brand-red/10 transition">Giảm mỡ</button>
+                    <button onclick="nextQuizStep(2, 'muscle_gain')" data-i18n="quiz_goal_muscle_gain" class="w-full text-left px-4 py-3 rounded border border-white/10 bg-white/5 text-white hover:border-brand-red hover:bg-brand-red/10 transition">Tăng cơ</button>
+                    <button onclick="nextQuizStep(2, 'general_health')" data-i18n="quiz_goal_health" class="w-full text-left px-4 py-3 rounded border border-white/10 bg-white/5 text-white hover:border-brand-red hover:bg-brand-red/10 transition">Sức khỏe tổng thể</button>
+                    <button onclick="nextQuizStep(2, 'cardio')" data-i18n="quiz_goal_cardio" class="w-full text-left px-4 py-3 rounded border border-white/10 bg-white/5 text-white hover:border-brand-red hover:bg-brand-red/10 transition">Chạy bộ / cardio</button>
                 </div>
             </div>
 
             <div id="quiz-step-2" class="hidden space-y-4">
-                <p class="text-xs font-semibold uppercase text-gray-300 text-center">Bước 2/3: Bạn có thể tập bao nhiêu phút/tuần?</p>
+                <p class="text-xs font-semibold uppercase text-gray-300 text-center" data-i18n="quiz_step_two">Bước 2/3: Bạn có thể tập bao nhiêu buổi/tuần?</p>
                 <div class="grid gap-3">
-                    <button onclick="nextQuizStep(3, '3-4 buổi')" class="w-full text-left px-4 py-3 rounded border border-white/10 bg-white/5 text-white hover:border-brand-red hover:bg-brand-red/10 transition">3–4 buổi</button>
-                    <button onclick="nextQuizStep(3, '4-5 buổi')" class="w-full text-left px-4 py-3 rounded border border-white/10 bg-white/5 text-white hover:border-brand-red hover:bg-brand-red/10 transition">4–5 buổi</button>
-                    <button onclick="nextQuizStep(3, '5-6 buổi')" class="w-full text-left px-4 py-3 rounded border border-white/10 bg-white/5 text-white hover:border-brand-red hover:bg-brand-red/10 transition">5–6 buổi</button>
-                    <button onclick="nextQuizStep(3, 'Tự do theo lịch cá nhân')" class="w-full text-left px-4 py-3 rounded border border-white/10 bg-white/5 text-white hover:border-brand-red hover:bg-brand-red/10 transition">Tự do theo lịch cá nhân</button>
+                    <button onclick="nextQuizStep(3, '3-4')" data-i18n="quiz_frequency_3_4" class="w-full text-left px-4 py-3 rounded border border-white/10 bg-white/5 text-white hover:border-brand-red hover:bg-brand-red/10 transition">3–4 buổi</button>
+                    <button onclick="nextQuizStep(3, '4-5')" data-i18n="quiz_frequency_4_5" class="w-full text-left px-4 py-3 rounded border border-white/10 bg-white/5 text-white hover:border-brand-red hover:bg-brand-red/10 transition">4–5 buổi</button>
+                    <button onclick="nextQuizStep(3, '5-6')" data-i18n="quiz_frequency_5_6" class="w-full text-left px-4 py-3 rounded border border-white/10 bg-white/5 text-white hover:border-brand-red hover:bg-brand-red/10 transition">5–6 buổi</button>
+                    <button onclick="nextQuizStep(3, 'flexible')" data-i18n="quiz_frequency_flexible" class="w-full text-left px-4 py-3 rounded border border-white/10 bg-white/5 text-white hover:border-brand-red hover:bg-brand-red/10 transition">Linh hoạt theo lịch cá nhân</button>
                 </div>
             </div>
 
             <div id="quiz-step-3" class="hidden space-y-4">
-                <p class="text-xs font-semibold uppercase text-gray-300 text-center">Kết quả gợi ý lộ trình phù hợp:</p>
+                <p class="text-xs font-semibold uppercase text-gray-300 text-center" data-i18n="quiz_result_intro">Kết quả gợi ý lộ trình phù hợp:</p>
                 <div class="p-6 bg-white/5 border border-brand-red rounded-lg text-center space-y-3">
-                    <div id="quiz-result" class="text-xl font-black uppercase text-white">Lộ trình tối ưu cho bạn</div>
-                    <p class="text-sm text-gray-300">Bạn nên bắt đầu với khóa 1 kèm 1 và 3 buổi cardio dạng HIIT theo lịch tuần phù hợp.</p>
+                    <div id="quiz-result" class="text-xl font-black uppercase text-white"></div>
+                    <p id="quiz-result-details" class="text-sm text-gray-300"></p>
                 </div>
-                <button onclick="closeQuizModal(); openModal('register')" class="w-full py-3 bg-white text-black font-bold text-xs uppercase tracking-wider rounded hover:bg-gray-200 transition">ĐĂNG KÝ TƯ VẤN</button>
+                <button onclick="closeQuizModal(); openModal('register')" class="w-full py-3 bg-white text-black font-bold text-xs uppercase tracking-wider rounded hover:bg-gray-200 transition" data-i18n="quiz_register">ĐĂNG KÝ TƯ VẤN</button>
             </div>
         </div>
     </div>
@@ -742,14 +702,14 @@
     <!-- SEARCH MODAL -->
     <div id="search-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-start justify-center pt-20 p-4">
         <div class="bg-zinc-900 border border-white/10 rounded-xl p-6 max-w-2xl w-full relative space-y-4">
-            <button onclick="toggleSearchModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+            <button onclick="toggleSearchModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white" aria-label="Close" data-i18n-aria="close_label">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
             <div class="relative">
-                <input id="search-input" type="text" oninput="handleSearch()" placeholder="Tìm chương trình, coach, không gian..." class="w-full bg-black/50 border border-white/20 rounded px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-brand-red">
+                <input id="search-input" type="search" oninput="handleSearch()" data-i18n-placeholder="search_placeholder" placeholder="Tìm chương trình, coach, không gian..." class="w-full bg-black/50 border border-white/20 rounded px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-brand-red">
             </div>
             <div id="search-results" class="space-y-2 pt-2 text-xs text-gray-400 max-h-60 overflow-y-auto">
-                <p class="text-gray-500">Nhập từ khóa để tìm nội dung phù hợp.</p>
+                <p class="text-gray-500" data-i18n="search_prompt">Nhập từ khóa để tìm nội dung phù hợp.</p>
             </div>
         </div>
     </div>
@@ -757,21 +717,24 @@
     <!-- REGISTRATION MODAL -->
     <div id="register-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-zinc-900 border border-white/10 p-6 sm:p-8 rounded-xl max-w-md w-full relative">
-            <button onclick="closeModal('register')" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+            <button onclick="closeModal('register')" class="absolute top-4 right-4 text-gray-400 hover:text-white" aria-label="Close" data-i18n-aria="close_label">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
-            <h3 class="text-xl font-extrabold uppercase text-white mb-4">ĐĂNG KÝ TRẢI NGHIỆM</h3>
+            <h3 class="text-xl font-extrabold uppercase text-white mb-4" data-i18n="form_title">ĐĂNG KÝ TRẢI NGHIỆM</h3>
             <form onsubmit="handleFormSubmit(event)" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-semibold uppercase text-gray-400 mb-1">Họ và tên</label>
-                    <input type="text" required placeholder="Nguyễn Văn A" class="w-full bg-black/50 border border-white/20 rounded px-3 py-2.5 text-sm text-white focus:outline-none focus:border-brand-red">
+                    <label for="register-name" class="block text-xs font-semibold uppercase text-gray-400 mb-1" data-i18n="form_name">Họ và tên</label>
+                    <input id="register-name" name="name" type="text" required minlength="2" maxlength="100" autocomplete="name" data-i18n-placeholder="form_name_placeholder" placeholder="Nguyễn Văn A" class="w-full bg-black/50 border border-white/20 rounded px-3 py-2.5 text-sm text-white focus:outline-none focus:border-brand-red">
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold uppercase text-gray-400 mb-1">Số điện thoại</label>
-                    <input type="tel" required placeholder="0901234567" class="w-full bg-black/50 border border-white/20 rounded px-3 py-2.5 text-sm text-white focus:outline-none focus:border-brand-red">
+                    <label for="register-phone" class="block text-xs font-semibold uppercase text-gray-400 mb-1" data-i18n="form_phone">Số điện thoại</label>
+                    <input id="register-phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel" minlength="10" maxlength="12" pattern="(?:\+84|0)(?:3|5|7|8|9)[0-9]{8}" title="Nhập số di động Việt Nam hợp lệ, ví dụ 0901234567" data-i18n-title="form_phone_title" data-i18n-placeholder="form_phone_placeholder" placeholder="0901234567" class="w-full bg-black/50 border border-white/20 rounded px-3 py-2.5 text-sm text-white focus:outline-none focus:border-brand-red">
                 </div>
+                <input id="register-goal" name="goal" type="hidden">
+                <p class="text-xs text-gray-400" data-i18n="form_privacy_notice">Thông tin chỉ được dùng để liên hệ tư vấn và được lưu trên hệ thống của phòng tập.</p>
+                <p id="register-error" class="hidden text-sm text-red-300" role="alert"></p>
                 <button type="submit" class="w-full py-3 bg-white text-black font-bold text-xs uppercase tracking-wider rounded hover:bg-gray-200 transition">
-                    GỬI ĐĂNG KÝ ↗
+                    <span data-i18n="form_submit">GỬI ĐĂNG KÝ ↗</span>
                 </button>
             </form>
         </div>
@@ -793,7 +756,12 @@
         // Toggle Modals
         function openModal(id) {
             const modal = document.getElementById(id + '-modal');
-            if (modal) modal.classList.remove('hidden');
+            if (!modal) return;
+            modal.classList.remove('hidden');
+            if (id === 'register') {
+                document.getElementById('register-error').classList.add('hidden');
+                window.setTimeout(() => document.getElementById('register-name').focus(), 0);
+            }
         }
 
         function closeModal(id) {
@@ -806,6 +774,9 @@
             const firstStep = document.getElementById('quiz-step-1');
             const secondStep = document.getElementById('quiz-step-2');
             const thirdStep = document.getElementById('quiz-step-3');
+            quizAnswers.goal = '';
+            quizAnswers.frequency = '';
+            document.getElementById('register-goal').value = '';
             if (modal) modal.classList.remove('hidden');
             if (firstStep) firstStep.classList.remove('hidden');
             if (secondStep) secondStep.classList.add('hidden');
@@ -817,69 +788,144 @@
             if (modal) modal.classList.add('hidden');
         }
 
+        document.addEventListener('keydown', (event) => {
+            if (event.key !== 'Escape') return;
+            document.querySelectorAll('#register-modal, #quiz-modal, #search-modal').forEach((modal) => modal.classList.add('hidden'));
+        });
+
+        let activeLanguage = 'vi';
+        const quizAnswers = { goal: '', frequency: '' };
+
         function nextQuizStep(step, value) {
-            if (step === 2) {
+            if (step === 2 && document.getElementById('quiz-step-1').classList.contains('hidden') === false) {
+                quizAnswers.goal = value;
                 document.getElementById('quiz-step-1').classList.add('hidden');
                 document.getElementById('quiz-step-2').classList.remove('hidden');
+                return;
             }
-            if (step === 3) {
+            if (step === 3 && quizAnswers.goal) {
+                quizAnswers.frequency = value;
                 document.getElementById('quiz-step-2').classList.add('hidden');
                 document.getElementById('quiz-step-3').classList.remove('hidden');
-                document.getElementById('quiz-result').innerText = value + ' • Lộ trình tối ưu cho bạn';
+                const copy = i18n[activeLanguage];
+                const goal = copy[`quiz_goal_${quizAnswers.goal}`];
+                document.getElementById('quiz-result').textContent = copy.quiz_result_goal.replace('{goal}', goal);
+                document.getElementById('quiz-result-details').textContent =
+                    `${copy.quiz_frequency_label}: ${copy[`quiz_frequency_${quizAnswers.frequency.replace('-', '_')}`]}. ${copy[`quiz_recommend_${quizAnswers.goal}`]}`;
+                document.getElementById('register-goal').value = quizAnswers.goal;
             }
         }
 
         function toggleSearchModal() {
             const modal = document.getElementById('search-modal');
-            if (modal) modal.classList.toggle('hidden');
+            if (!modal) return;
+            modal.classList.toggle('hidden');
             if (!modal.classList.contains('hidden')) {
                 const input = document.getElementById('search-input');
-                if (input) input.focus();
+                if (input) {
+                    input.value = '';
+                    handleSearch();
+                    input.focus();
+                }
             }
+        }
+
+        const searchItems = [
+            { id: 'khong-gian', titleKey: 'search_facilities', categoryKey: 'search_cat_facilities', keywords: ['khong gian', 'gym', 'facility', 'facilities', 'cardio', 'strength', 'sauna', 'recovery'] },
+            { id: 'chuong-trinh', titleKey: 'search_programs', categoryKey: 'search_cat_programs', keywords: ['chuong trinh', 'program', 'programs', 'giam mo', 'fat loss', 'tang co', 'muscle', 'posture'] },
+            { id: 'huan-luyen-vien', titleKey: 'search_coaches', categoryKey: 'search_cat_team', keywords: ['coach', 'coaches', 'huan luyen vien', 'doi ngu', 'trainer'] },
+            { id: 'bang-gia', titleKey: 'search_pricing', categoryKey: 'search_cat_pricing', keywords: ['gia', 'pricing', 'price', 'goi tap', 'membership'] },
+            { id: 'cong-dong', titleKey: 'search_reviews', categoryKey: 'search_cat_community', keywords: ['review', 'reviews', 'community', 'cong dong', 'hoi vien'] }
+        ];
+
+        function normalizeSearchText(value) {
+            return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
         }
 
         function handleSearch() {
-            const query = document.getElementById('search-input').value.trim().toLowerCase();
+            const query = normalizeSearchText(document.getElementById('search-input').value.trim());
             const resultContainer = document.getElementById('search-results');
-            const items = [
-                { title: 'Private Gym', category: 'Không gian' },
-                { title: 'Lộ trình giảm mỡ', category: 'Chương trình' },
-                { title: 'Huấn luyện viên', category: 'Đội ngũ' },
-                { title: 'Bảng giá', category: 'Pricing' },
-                { title: 'Sauna & recovery', category: 'Không gian' }
-            ];
+            resultContainer.replaceChildren();
 
             if (!query) {
-                resultContainer.innerHTML = '<p class="text-gray-500">Nhập từ khóa để tìm nội dung phù hợp.</p>';
+                const prompt = document.createElement('p');
+                prompt.className = 'text-gray-500';
+                prompt.textContent = i18n[activeLanguage].search_prompt;
+                resultContainer.appendChild(prompt);
                 return;
             }
 
-            const filtered = items.filter(item => item.title.toLowerCase().includes(query) || item.category.toLowerCase().includes(query));
+            const filtered = searchItems.filter((item) => {
+                const copy = i18n[activeLanguage];
+                const haystack = normalizeSearchText([
+                    copy[item.titleKey],
+                    copy[item.categoryKey],
+                    ...item.keywords
+                ].join(' '));
+                return haystack.includes(query);
+            });
 
             if (!filtered.length) {
-                resultContainer.innerHTML = `<p class="text-gray-500">Không tìm thấy kết quả phù hợp cho "${query}".</p>`;
+                const empty = document.createElement('p');
+                empty.className = 'text-gray-500';
+                empty.textContent = i18n[activeLanguage].search_no_results.replace('{query}', document.getElementById('search-input').value.trim());
+                resultContainer.appendChild(empty);
                 return;
             }
 
-            resultContainer.innerHTML = filtered.map(item => `
-                <div class="bg-white/5 border border-white/10 rounded px-3 py-2">
-                    <div class="font-semibold text-white">${item.title}</div>
-                    <div class="text-gray-400">${item.category}</div>
-                </div>
-            `).join('');
+            for (const item of filtered) {
+                const link = document.createElement('a');
+                link.href = `#${item.id}`;
+                link.className = 'block bg-white/5 border border-white/10 rounded px-3 py-2 hover:bg-white/10';
+                const title = document.createElement('div');
+                title.className = 'font-semibold text-white';
+                title.textContent = i18n[activeLanguage][item.titleKey];
+                const category = document.createElement('div');
+                category.className = 'text-gray-400';
+                category.textContent = i18n[activeLanguage][item.categoryKey];
+                link.append(title, category);
+                link.addEventListener('click', toggleSearchModal, { once: true });
+                resultContainer.appendChild(link);
+            }
         }
 
-        function handleFormSubmit(e) {
+        async function handleFormSubmit(e) {
             e.preventDefault();
-            closeModal('register');
-            showToast('Cảm ơn bạn đã đăng ký! Chúng tôi sẽ liên hệ lại trong thời gian sớm nhất.');
+            const form = e.currentTarget;
+            const error = document.getElementById('register-error');
+            const submitButton = form.querySelector('button[type="submit"]');
+            error.classList.add('hidden');
+            submitButton.disabled = true;
+            try {
+                const response = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: form.elements.name.value.trim(),
+                        phone: form.elements.phone.value.trim(),
+                        goal: form.elements.goal.value
+                    })
+                });
+                const result = await response.json();
+                if (!response.ok) throw new Error(result.error || i18n[activeLanguage].form_error);
+                form.reset();
+                closeModal('register');
+                showToast(i18n[activeLanguage].form_success);
+            } catch (requestError) {
+                error.textContent = requestError.message === 'Failed to fetch'
+                    ? i18n[activeLanguage].server_unavailable
+                    : requestError.message;
+                error.classList.remove('hidden');
+            } finally {
+                submitButton.disabled = false;
+            }
         }
 
         function showToast(message) {
             const container = document.getElementById('toast-container');
             const toast = document.createElement('div');
             toast.className = 'bg-white text-black border border-black font-semibold text-xs px-4 py-3 rounded shadow-xl';
-            toast.innerHTML = '<span>' + message + '</span>';
+            toast.textContent = message;
             container.appendChild(toast);
             setTimeout(() => {
                 toast.remove();
@@ -890,40 +936,60 @@
         const floorData = {
             1: {
                 badge: "TẦNG 1",
+                tabKey: "floor1_tab",
+                titleKey: "floor1_title",
+                descKey: "floor1_desc",
+                capacityKey: "floor1_capacity",
                 title: "KHU VỰC TĂNG CƠ & SỨC MẠNH TẢI TRỌNG LỚN",
                 desc: "Trang bị dàn tạ Free Weight chuyên nghiệp, máy tập Robot Hammer Strength chuẩn giải quốc tế, thảm chống xóc công nghiệp giúp bạn chinh phục mọi mốc tạ an toàn.",
                 capacity: "15 Hội viên / Khung giờ",
                 equipment: "Hammer Strength, Eleiko Barbell",
-                img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop"
+                img: "../assets/images/gym-floor-strength.jpg"
             },
             2: {
                 badge: "TẦNG 2",
+                tabKey: "floor2_tab",
+                titleKey: "floor2_title",
+                descKey: "floor2_desc",
+                capacityKey: "floor2_capacity",
                 title: "KHU CARDIO & BỨC PHÁ THỂ LỰC HIIT",
                 desc: "Hệ thống máy chạy Skillrun, xe đạp Technogym và khu vực tập luyện thể lực nhóm nhỏ tối ưu nhịp tim, đốt mỡ thừa vượt trội.",
                 capacity: "12 Hội viên / Khung giờ",
                 equipment: "Technogym Skillrun, Assault AirBike",
-                img: "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1200&auto=format&fit=crop"
+                img: "../assets/images/gym-floor-cardio.jpg"
             },
             3: {
                 badge: "TẦNG 3",
+                tabKey: "floor3_tab",
+                titleKey: "floor3_title",
+                descKey: "floor3_desc",
+                capacityKey: "floor3_capacity",
                 title: "STUDIO TẬP 1 KÈM 1 CỰC KỲ RIÊNG TƯ",
                 desc: "Không gian riêng khép kín 100% dành riêng cho các buổi tập PT cá nhân hóa, đo đạc chỉ số sinh học và điều chỉnh form dáng.",
                 capacity: "5 Hội viên / Khung giờ",
                 equipment: "Kinesis Station, InBody 770",
-                img: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=1200&auto=format&fit=crop"
+                img: "../assets/images/gym-floor-studio.jpg"
             },
             4: {
                 badge: "TẦNG 4",
+                tabKey: "floor4_tab",
+                titleKey: "floor4_title",
+                descKey: "floor4_desc",
+                capacityKey: "floor4_capacity",
                 title: "KHU PHỤC HỒI, XÔNG HƠI & RELAX LOUNGE",
                 desc: "Phòng xông hơi đá muối Sauna, bể ngâm lạnh Cryo cùng khu lounge nghỉ ngơi giúp bạn giãn cơ và hồi phục năng lượng trọn vẹn.",
                 capacity: "8 Hội viên / Khung giờ",
                 equipment: "Phòng Sauna Khô, Bể Ngâm Lạnh",
-                img: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop"
+                img: "../assets/images/gym-floor-recovery.jpg"
             }
         };
+        let activeFloor = 1;
 
         function setActiveFloor(floorNum) {
-            // Update tabs style
+            const data = floorData[floorNum];
+            if (!data) return;
+            activeFloor = floorNum;
+            const copy = i18n[activeLanguage];
             for (let i = 1; i <= 4; i++) {
                 const tab = document.getElementById(`floor-tab-${i}`);
                 if (i === floorNum) {
@@ -931,15 +997,15 @@
                 } else {
                     tab.className = "floor-tab py-4 text-sm font-semibold uppercase tracking-wider border-b-2 border-transparent text-gray-500 hover:text-black whitespace-nowrap";
                 }
+                tab.setAttribute('aria-selected', String(i === floorNum));
+                tab.textContent = copy[floorData[i].tabKey];
             }
 
-            // Update content
-            const data = floorData[floorNum];
-            document.getElementById('floor-badge').innerText = data.badge;
-            document.getElementById('floor-title').innerText = data.title;
-            document.getElementById('floor-desc').innerText = data.desc;
-            document.getElementById('floor-cap').innerText = data.capacity;
-            document.getElementById('floor-eq').innerText = data.equipment;
+            document.getElementById('floor-badge').textContent = `${activeLanguage === 'vi' ? 'TẦNG' : 'FLOOR'} ${floorNum}`;
+            document.getElementById('floor-title').textContent = copy[data.titleKey];
+            document.getElementById('floor-desc').textContent = copy[data.descKey];
+            document.getElementById('floor-cap').textContent = copy[data.capacityKey];
+            document.getElementById('floor-eq').textContent = data.equipment;
             document.getElementById('floor-img').src = data.img;
         }
 
@@ -993,7 +1059,130 @@
                 p7_name: 'KIẾN TẠO VÒNG 3 NỮ',
                 p7_desc: 'Tập trung làm đầy đặn, săn chắc vòng 3 mà không làm thô đùi.',
                 p8_name: 'HYBRID ATHLETE',
-                p8_desc: 'Kết hợp sức mạnh kháng lực và VO2 Max cho vận động viên phong trào.'
+                p8_desc: 'Kết hợp sức mạnh kháng lực và VO2 Max cho vận động viên phong trào.',
+                search_label: 'Tìm kiếm',
+                menu_label: 'Mở menu',
+                close_label: 'Đóng',
+                btn_quiz: 'Tìm cách tập phù hợp',
+                floor1_tab: 'TẦNG 1: HEAVY STRENGTH',
+                floor2_tab: 'TẦNG 2: CARDIO & HIIT',
+                floor3_tab: 'TẦNG 3: PRIVATE PT STUDIO',
+                floor4_tab: 'TẦNG 4: RECOVERY & SAUNA',
+                floor1_title: 'KHU VỰC TĂNG CƠ & SỨC MẠNH TẢI TRỌNG LỚN',
+                floor1_desc: 'Trang bị dàn tạ Free Weight chuyên nghiệp, máy tập Robot Hammer Strength chuẩn giải quốc tế, thảm chống xóc công nghiệp giúp bạn chinh phục mọi mốc tạ an toàn.',
+                floor1_capacity: '15 Hội viên / Khung giờ',
+                floor2_title: 'KHU CARDIO & BỨC PHÁ THỂ LỰC HIIT',
+                floor2_desc: 'Hệ thống máy chạy Skillrun, xe đạp Technogym và khu vực tập luyện thể lực nhóm nhỏ tối ưu nhịp tim, đốt mỡ thừa vượt trội.',
+                floor2_capacity: '12 Hội viên / Khung giờ',
+                floor3_title: 'STUDIO TẬP 1 KÈM 1 CỰC KỲ RIÊNG TƯ',
+                floor3_desc: 'Không gian riêng khép kín 100% dành riêng cho các buổi tập PT cá nhân hóa, đo đạc chỉ số sinh học và điều chỉnh form dáng.',
+                floor3_capacity: '5 Hội viên / Khung giờ',
+                floor4_title: 'KHU PHỤC HỒI, XÔNG HƠI & RELAX LOUNGE',
+                floor4_desc: 'Phòng xông hơi đá muối Sauna, bể ngâm lạnh Cryo cùng khu lounge nghỉ ngơi giúp bạn giãn cơ và hồi phục năng lượng trọn vẹn.',
+                floor4_capacity: '8 Hội viên / Khung giờ',
+                coaches_eyebrow: 'ĐỘI NGŨ COACH',
+                coaches_title: 'HUẤN LUYỆN VIÊN GIÀU KINH NGHIỆM',
+                coaches_desc: 'Mỗi chương trình đều do coach có tư duy cá nhân hóa, theo dõi định kỳ và chỉnh form sát từng buổi tập.',
+                coach_hai_alt: 'Huấn luyện viên Hải',
+                coach_hai_role: 'HEAD COACH',
+                coach_hai_name: 'ANH HẢI',
+                coach_hai_desc: 'Chuyên giảm mỡ & cải thiện thể trạng',
+                coach_hai_exp: '8 năm kinh nghiệm',
+                coach_thao_alt: 'Huấn luyện viên Thảo',
+                coach_thao_role: 'STRENGTH COACH',
+                coach_thao_name: 'CHỊ THẢO',
+                coach_thao_desc: 'Tăng cơ, cải thiện tỷ lệ và sức mạnh',
+                coach_thao_exp: '6 năm kinh nghiệm',
+                coach_huy_alt: 'Huấn luyện viên Huy',
+                coach_huy_role: 'REHAB COACH',
+                coach_huy_name: 'ANH HUY',
+                coach_huy_desc: 'Phục hồi chấn thương & sửa tư thế',
+                coach_huy_exp: '9 năm kinh nghiệm',
+                reviews_rating: '4.9/5 từ 1,200+ thành viên',
+                review_one: '“Tôi tập ở đây 6 tháng rồi thấy form cơ bắp rõ, ít khi phải đợi máy và không bị cảm giác chen chúc như phòng tập thường.”',
+                review_one_goal: 'Tăng cơ / giảm mỡ',
+                review_two: '“Coach rất kỹ, hướng dẫn từng động tác và lịch tập rõ ràng. Ngoài ra không gian yên tĩnh, private và sạch sẽ hơn nhiều so với gym khác.”',
+                review_two_goal: 'Cải thiện sức khỏe',
+                review_three: '“Mình thích tầng recovery và sauna. Tập xong cảm thấy hồi phục nhanh, không bị đau nhức như nhiều nơi khác.”',
+                review_three_goal: 'Phục hồi & sức bền',
+                pricing_label: 'BẢNG GIÁ',
+                pricing_title: 'GÓI TẬP PHÙ HỢP MỤC TIÊU',
+                pricing_desc: 'Không chi phí ẩn, bao gồm toàn bộ tiện ích locker, sauna, khăn tập và nước uống vô tận.',
+                price_basic: 'Gói cơ bản',
+                price_basic_feature1: '• 3 buổi/tuần',
+                price_basic_feature2: '• 1 Coach & 1 buổi review',
+                price_basic_feature3: '• Sử dụng không gian chung',
+                price_transform: 'Gói chuyển đổi',
+                price_transform_feature1: '• 5 buổi/tuần',
+                price_transform_feature2: '• 1 kèm 1 kiểm soát form',
+                price_transform_feature3: '• Ưu tiên slot & recovery lounge',
+                price_vip: 'Gói VIP',
+                price_vip_feature1: '• Tập 1 kèm 1 premium',
+                price_vip_feature2: '• Theo dõi InBody định kỳ',
+                price_vip_feature3: '• Sauna + locker + recovery tối ưu',
+                register: 'Đăng ký',
+                popular: 'Phổ biến',
+                quiz_eyebrow: 'TRẮC NGHIỆM TẬP LUYỆN',
+                quiz_title: 'TÌM LỘ TRÌNH TẬP PHÙ HỢP',
+                quiz_step_one: 'Bước 1/3: Mục tiêu quan trọng nhất của bạn là gì?',
+                quiz_step_two: 'Bước 2/3: Bạn có thể tập bao nhiêu buổi/tuần?',
+                quiz_goal_fat_loss: 'Giảm mỡ',
+                quiz_goal_muscle_gain: 'Tăng cơ',
+                quiz_goal_health: 'Sức khỏe tổng thể',
+                quiz_goal_cardio: 'Chạy bộ / cardio',
+                quiz_frequency_3_4: '3–4 buổi',
+                quiz_frequency_4_5: '4–5 buổi',
+                quiz_frequency_5_6: '5–6 buổi',
+                quiz_frequency_flexible: 'Linh hoạt theo lịch cá nhân',
+                quiz_result_intro: 'Kết quả gợi ý lộ trình phù hợp:',
+                quiz_result_goal: 'Mục tiêu: {goal}',
+                quiz_frequency_label: 'Lịch tập gợi ý',
+                quiz_recommend_fat_loss: 'Bắt đầu với sức mạnh toàn thân kết hợp cardio phù hợp thể trạng.',
+                quiz_recommend_muscle_gain: 'Ưu tiên tập kháng lực tăng tiến, dinh dưỡng và thời gian phục hồi.',
+                quiz_recommend_general_health: 'Kết hợp sức mạnh, vận động tim mạch và thói quen tập bền vững.',
+                quiz_recommend_cardio: 'Tăng sức bền từ từ, kết hợp bài tập sức mạnh để cân bằng thể lực.',
+                quiz_register: 'ĐĂNG KÝ TƯ VẤN',
+                form_title: 'ĐĂNG KÝ TRẢI NGHIỆM',
+                form_name: 'Họ và tên',
+                form_name_placeholder: 'Nguyễn Văn A',
+                form_phone: 'Số điện thoại',
+                form_phone_title: 'Nhập số di động Việt Nam hợp lệ, ví dụ 0901234567',
+                form_phone_placeholder: '0901234567',
+                form_privacy_notice: 'Thông tin chỉ được dùng để liên hệ tư vấn và được lưu trên hệ thống của phòng tập.',
+                form_submit: 'GỬI ĐĂNG KÝ ↗',
+                form_success: 'Cảm ơn bạn đã đăng ký! Chúng tôi sẽ liên hệ lại trong thời gian sớm nhất.',
+                form_error: 'Không thể gửi đăng ký lúc này.',
+                server_unavailable: 'Không kết nối được máy chủ. Vui lòng thử lại sau.',
+                search_placeholder: 'Tìm chương trình, huấn luyện viên, không gian...',
+                search_prompt: 'Nhập từ khóa để tìm nội dung phù hợp.',
+                search_no_results: 'Không tìm thấy kết quả phù hợp cho "{query}".',
+                search_facilities: 'Không gian tập luyện',
+                search_cat_facilities: 'Không gian',
+                search_programs: 'Chương trình tập luyện',
+                search_cat_programs: 'Chương trình',
+                search_coaches: 'Huấn luyện viên',
+                search_cat_team: 'Đội ngũ',
+                search_pricing: 'Bảng giá',
+                search_cat_pricing: 'Giá tập',
+                search_reviews: 'Đánh giá hội viên',
+                search_cat_community: 'Cộng đồng',
+                call_us: 'Gọi để được tư vấn',
+                footer_location: 'Thủ Đức, TP.HCM',
+                page_title: 'THE OCEAN GYM - Private Gym Tại Thủ Đức',
+                register_consult: 'Đăng ký tư vấn',
+                program_label_1: 'LỘ TRÌNH 01',
+                program_label_2: 'LỘ TRÌNH 02',
+                program_label_3: 'LỘ TRÌNH 03',
+                program_label_4: 'LỘ TRÌNH 04',
+                program_label_5: 'LỘ TRÌNH 05',
+                program_label_6: 'LỘ TRÌNH 06',
+                program_label_7: 'LỘ TRÌNH 07',
+                program_label_8: 'LỘ TRÌNH 08',
+                community_title: 'HỘI VIÊN NÓI GÌ VỀ THE OCEAN',
+                footer_desc: 'Private gym tại Thủ Đức với mô hình tập luyện 1 kèm 1, không gian riêng tư và lộ trình hướng tới mục tiêu rõ ràng.',
+                footer_nav_heading: 'Điều hướng',
+                footer_contact_heading: 'Liên hệ',
+                footer_copyright: '© 2026 THE OCEAN GYM THỦ ĐỨC. ALL RIGHTS RESERVED.'
             },
             en: {
                 nav_programs: 'Training Programs',
@@ -1044,12 +1233,137 @@
                 p7_name: 'WOMEN’S CURVE BUILD',
                 p7_desc: 'Focused on full glute and waist shaping without making the legs look bulky.',
                 p8_name: 'HYBRID ATHLETE',
-                p8_desc: 'Combines strength training and VO2 Max conditioning for athletic performance.'
+                p8_desc: 'Combines strength training and VO2 Max conditioning for athletic performance.',
+                search_label: 'Search',
+                menu_label: 'Open menu',
+                close_label: 'Close',
+                btn_quiz: 'Find your training plan',
+                floor1_tab: 'FLOOR 1: HEAVY STRENGTH',
+                floor2_tab: 'FLOOR 2: CARDIO & HIIT',
+                floor3_tab: 'FLOOR 3: PRIVATE PT STUDIO',
+                floor4_tab: 'FLOOR 4: RECOVERY & SAUNA',
+                floor1_title: 'HEAVY STRENGTH TRAINING AREA',
+                floor1_desc: 'Train with professional free weights, competition-grade Hammer Strength equipment and impact-absorbing flooring.',
+                floor1_capacity: '15 members per time slot',
+                floor2_title: 'CARDIO & HIIT TRAINING AREA',
+                floor2_desc: 'Skillrun treadmills, Technogym bikes and small-group conditioning sessions help improve endurance and cardiovascular fitness.',
+                floor2_capacity: '12 members per time slot',
+                floor3_title: 'PRIVATE ONE-ON-ONE TRAINING STUDIO',
+                floor3_desc: 'A fully private studio for personalized coaching, body measurements and movement coaching.',
+                floor3_capacity: '5 members per time slot',
+                floor4_title: 'RECOVERY, SAUNA & RELAXATION LOUNGE',
+                floor4_desc: 'Salt-stone sauna, cold plunge and a recovery lounge help you unwind after training.',
+                floor4_capacity: '8 members per time slot',
+                coaches_eyebrow: 'OUR COACHING TEAM',
+                coaches_title: 'EXPERIENCED PERSONAL TRAINERS',
+                coaches_desc: 'Every program is personalized, reviewed regularly and coached with close attention to form.',
+                coach_hai_alt: 'Coach Hai',
+                coach_hai_role: 'HEAD COACH',
+                coach_hai_name: 'HAI',
+                coach_hai_desc: 'Fat loss and fitness improvement',
+                coach_hai_exp: '8 years of experience',
+                coach_thao_alt: 'Coach Thao',
+                coach_thao_role: 'STRENGTH COACH',
+                coach_thao_name: 'THAO',
+                coach_thao_desc: 'Muscle gain, proportions and strength',
+                coach_thao_exp: '6 years of experience',
+                coach_huy_alt: 'Coach Huy',
+                coach_huy_role: 'REHAB COACH',
+                coach_huy_name: 'HUY',
+                coach_huy_desc: 'Injury recovery and posture correction',
+                coach_huy_exp: '9 years of experience',
+                reviews_rating: '4.9/5 from 1,200+ members',
+                review_one: '“I have trained here for six months and can see a clear improvement in muscle definition. I rarely wait for equipment and never feel crowded.”',
+                review_one_goal: 'Muscle gain / fat loss',
+                review_two: '“The coach is attentive, explains every movement and keeps my schedule clear. The gym is quiet, private and clean.”',
+                review_two_goal: 'Improving overall health',
+                review_three: '“I like the recovery floor and sauna. I feel recovered faster after training.”',
+                review_three_goal: 'Recovery and endurance',
+                pricing_label: 'PRICING',
+                pricing_title: 'A PLAN FOR YOUR GOALS',
+                pricing_desc: 'No hidden fees. Locker, sauna, training towels and drinking water are included.',
+                price_basic: 'Essential plan',
+                price_basic_feature1: '• 3 sessions per week',
+                price_basic_feature2: '• Coach support and one review session',
+                price_basic_feature3: '• Shared training areas',
+                price_transform: 'Transformation plan',
+                price_transform_feature1: '• 5 sessions per week',
+                price_transform_feature2: '• One-on-one form coaching',
+                price_transform_feature3: '• Priority booking and recovery lounge',
+                price_vip: 'VIP plan',
+                price_vip_feature1: '• Premium one-on-one training',
+                price_vip_feature2: '• Regular InBody check-ins',
+                price_vip_feature3: '• Sauna, lockers and recovery facilities',
+                register: 'Register',
+                popular: 'Popular',
+                quiz_eyebrow: 'TRAINING QUIZ',
+                quiz_title: 'FIND A TRAINING PLAN THAT FITS',
+                quiz_step_one: 'Step 1/3: What is your main goal?',
+                quiz_step_two: 'Step 2/3: How many sessions can you train each week?',
+                quiz_goal_fat_loss: 'Fat loss',
+                quiz_goal_muscle_gain: 'Muscle gain',
+                quiz_goal_health: 'Overall health',
+                quiz_goal_cardio: 'Running / cardio',
+                quiz_frequency_3_4: '3–4 sessions',
+                quiz_frequency_4_5: '4–5 sessions',
+                quiz_frequency_5_6: '5–6 sessions',
+                quiz_frequency_flexible: 'Flexible schedule',
+                quiz_result_intro: 'A suggested plan for you:',
+                quiz_result_goal: 'Your goal: {goal}',
+                quiz_frequency_label: 'Suggested schedule',
+                quiz_recommend_fat_loss: 'Start with full-body strength training and cardio suited to your fitness level.',
+                quiz_recommend_muscle_gain: 'Focus on progressive resistance training, nutrition and recovery.',
+                quiz_recommend_general_health: 'Combine strength, cardiovascular exercise and sustainable training habits.',
+                quiz_recommend_cardio: 'Build endurance gradually and add strength training for balanced fitness.',
+                quiz_register: 'BOOK A CONSULTATION',
+                form_title: 'BOOK A TRIAL',
+                form_name: 'Full name',
+                form_name_placeholder: 'Your name',
+                form_phone: 'Phone number',
+                form_phone_title: 'Enter a valid Vietnamese mobile number, for example 0901234567',
+                form_phone_placeholder: '0901234567',
+                form_privacy_notice: 'Your information is used only to contact you about your enquiry and is stored by the gym.',
+                form_submit: 'SEND REQUEST ↗',
+                form_success: 'Thank you for your request. We will contact you soon.',
+                form_error: 'Your request could not be submitted.',
+                server_unavailable: 'Could not connect to the server. Please try again later.',
+                search_placeholder: 'Search programs, coaches and facilities...',
+                search_prompt: 'Enter a search term to find relevant content.',
+                search_no_results: 'No results found for "{query}".',
+                search_facilities: 'Training facilities',
+                search_cat_facilities: 'Facilities',
+                search_programs: 'Training programs',
+                search_cat_programs: 'Programs',
+                search_coaches: 'Our coaches',
+                search_cat_team: 'Team',
+                search_pricing: 'Membership pricing',
+                search_cat_pricing: 'Pricing',
+                search_reviews: 'Member reviews',
+                search_cat_community: 'Community',
+                call_us: 'Call for a consultation',
+                footer_location: 'Thu Duc, Ho Chi Minh City',
+                page_title: 'THE OCEAN GYM - Private Gym in Thu Duc',
+                register_consult: 'Book a consultation',
+                program_label_1: 'PROGRAM 01',
+                program_label_2: 'PROGRAM 02',
+                program_label_3: 'PROGRAM 03',
+                program_label_4: 'PROGRAM 04',
+                program_label_5: 'PROGRAM 05',
+                program_label_6: 'PROGRAM 06',
+                program_label_7: 'PROGRAM 07',
+                program_label_8: 'PROGRAM 08',
+                community_title: 'WHAT OUR MEMBERS SAY',
+                footer_desc: 'Private training in Thu Duc, with one-on-one coaching, a quiet space and programs built around your goals.',
+                footer_nav_heading: 'Explore',
+                footer_contact_heading: 'Contact',
+                footer_copyright: '© 2026 THE OCEAN GYM THU DUC. ALL RIGHTS RESERVED.'
             }
         };
 
         // Language Switcher Visual Toggle
         function setLanguage(lang) {
+            if (!i18n[lang]) return;
+            activeLanguage = lang;
             const viBtn = document.getElementById('lang-vi-btn');
             const enBtn = document.getElementById('lang-en-btn');
 
@@ -1061,11 +1375,30 @@
                 viBtn.className = 'px-2.5 py-1 rounded text-gray-400 hover:text-white transition';
             }
 
+            document.documentElement.lang = lang;
             document.querySelectorAll('[data-i18n]').forEach((el) => {
                 const key = el.getAttribute('data-i18n');
-                const text = i18n[lang] && i18n[lang][key] ? i18n[lang][key] : el.textContent.trim();
-                el.textContent = text;
+                if (Object.prototype.hasOwnProperty.call(i18n[lang], key)) el.textContent = i18n[lang][key];
             });
+            document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+                const text = i18n[lang][el.getAttribute('data-i18n-placeholder')];
+                if (text) el.setAttribute('placeholder', text);
+            });
+            document.querySelectorAll('[data-i18n-title]').forEach((el) => {
+                const text = i18n[lang][el.getAttribute('data-i18n-title')];
+                if (text) el.setAttribute('title', text);
+            });
+            document.querySelectorAll('[data-i18n-aria]').forEach((el) => {
+                const text = i18n[lang][el.getAttribute('data-i18n-aria')];
+                if (text) el.setAttribute('aria-label', text);
+            });
+            document.querySelectorAll('[data-i18n-alt]').forEach((el) => {
+                const text = i18n[lang][el.getAttribute('data-i18n-alt')];
+                if (text) el.setAttribute('alt', text);
+            });
+            document.title = i18n[lang].page_title;
+            setActiveFloor(activeFloor);
+            handleSearch();
         }
 
         setLanguage('vi');
